@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   const fetchFiles = async () => {
-    const res = await fetch('/api/files');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/files`);
     const data = await res.json();
     setFiles(data);
   };
@@ -30,7 +30,7 @@ export default function Home() {
     const formData = new FormData();
     formData.append('file', file);
 
-    await fetch('/api/upload', {
+    await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/upload`, {
       method: 'POST',
       body: formData,
     });
@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   const handleDelete = async (fileName: string) => {
-    await fetch('/api/delete', {
+    await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/delete`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
