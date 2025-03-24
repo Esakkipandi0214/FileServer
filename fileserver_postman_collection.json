@@ -1,0 +1,89 @@
+{
+    "info": {
+      "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+      "name": "Next.js File Upload APIs",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Upload File",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "file",
+                "type": "file",
+                "src": "/path/to/sample-image.jpg"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/upload",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "upload"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get File List",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/api/files",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "files"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Stream File",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/api/fileStream/sample-image.jpg",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "fileStream", "sample-image.jpg"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Delete File",
+        "request": {
+          "method": "DELETE",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"fileName\": \"sample-image.jpg\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/delete",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "delete"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
